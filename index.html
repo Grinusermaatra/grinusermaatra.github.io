@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- EDITA AQUÍ: descripción que aparece en buscadores -->
+  <meta
+    name="description"
+    content="NOMAD MOTORS: motocicletas propias de diseño custom, deportivo y trial."
+  >
+
+  <!-- EDITA AQUÍ: título de la pestaña del navegador -->
+  <title>NOMAD MOTORS — Más alla del camino</title>
+
+  <!-- Tipografías externas. Puedes cambiarlas desde Google Fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Textura visual muy ligera. Se controla desde styles.css -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- =====================================================
+       ENCABEZADO Y NAVEGACIÓN
+       ===================================================== -->
+  <header class="site-header" id="top">
+    <!-- EDITA AQUÍ: nombre y monograma de la marca -->
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <span class="brand-mark">NM</span>
+      <span class="brand-name">NOMAD MOTORS</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="#modelos">Modelos</a>
+      <a href="#filosofia">Filosofía</a>
+      <a href="#media">Media</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+      <!-- Botón para cambiar entre modo claro y oscuro -->
+      <button
+        class="icon-button"
+        id="themeToggle"
+        aria-label="Cambiar modo de color"
+        title="Cambiar modo"
+      >
+        <span aria-hidden="true">◐</span>
+      </button>
+
+      <!-- Abre el carrito lateral -->
+      <button class="cart-button" id="openCart" aria-label="Abrir carrito">
+        Carrito
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+
+      <!-- Solo aparece en dispositivos móviles -->
+      <button
+        class="menu-button"
+        id="menuToggle"
+        aria-expanded="false"
+        aria-controls="mobileNav"
+      >
+        Menú
+      </button>
+    </div>
+  </header>
+
+  <!-- Menú móvil -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil">
+    <a href="#modelos">Modelos</a>
+    <a href="#filosofia">Filosofía</a>
+    <a href="#media">Media</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <main>
+    <!-- =====================================================
+         PORTADA PRINCIPAL
+         EDITA AQUÍ: imagen, título y textos principales
+         ===================================================== -->
+    <section class="hero" id="inicio">
+      <div class="hero-media">
+        <img
+          src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=2000&q=88"
+          alt="Motocicleta NOMAD MOTORS recorriendo una carretera"
+        >
+      </div>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content reveal">
+        <p class="eyebrow">Motocicleta Mexicana</p>
+
+        <h1>EL CAMINO TE REVELA.</h1>
+
+        <p class="hero-copy">
+            Diseñados para guiarte a tu verdadero destino,
+            a tu verdadera libertad.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#modelos">
+            Descubrir modelos
+          </a>
+
+          <!-- Abre el video configurado en app.js -->
+          <button class="button button-ghost" data-video-open>
+            Ver manifiesto
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-index" aria-hidden="true">
+        <span>07</span>
+        <span>ORIGINAL MACHINES</span>
+      </div>
+    </section>
+
+    <!-- Franja de conceptos de marca -->
+    <section class="ticker" aria-label="Valores de marca">
+      <div class="ticker-track">
+        <span>CUSTOM</span>
+        <span>SPORT</span>
+        <span>TRIAL</span>
+        <span>NOMAD</span>
+        <span>CUSTOM</span>
+        <span>SPORT</span>
+        <span>TRIAL</span>
+        <span>NOMAD</span>
+        <span>CUSTOM</span>
+        <span>SPORT</span>
+        <span>TRIAL</span>
+        <span>NOMAD</span>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CATÁLOGO
+         Las tarjetas se crean automáticamente desde js/data.js
+         ===================================================== -->
+    <section class="section catalog-section" id="modelos">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Colección NOMAD / 2026</p>
+          <h2>ENCUENTRA TU FORMA<br>DE ESCAPAR.</h2>
+        </div>
+
+        <!-- Filtros del catálogo -->
+        <div class="catalog-controls">
+          <label class="sr-only" for="categoryFilter">
+            Filtrar por categoría
+          </label>
+
+          <select id="categoryFilter">
+            <option value="all">Todos los estilos</option>
+            <option value="Custom">Custom</option>
+            <option value="Deportiva">Deportivas</option>
+            <option value="Trial">Trial</option>
+          </select>
+
+          <label class="sr-only" for="sortFilter">
+            Ordenar catálogo
+          </label>
+
+          <select id="sortFilter">
+            <option value="featured">Colección original</option>
+            <option value="price-asc">Precio: menor a mayor</option>
+            <option value="price-desc">Precio: mayor a menor</option>
+            <option value="power-desc">Mayor potencia</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- JavaScript inserta aquí los siete modelos -->
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+    </section>
+
+    <!-- =====================================================
+         FILOSOFÍA DE MARCA
+         ===================================================== -->
+    <section class="experience" id="filosofia">
+      <div class="experience-image reveal">
+        <!-- EDITA AQUÍ: imagen editorial -->
+        <img
+          src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1600&q=88"
+          alt="Motociclista de NOMAD MOTORS en movimiento"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="experience-content reveal">
+        <p class="eyebrow">La filosofía NOMAD</p>
+        <h2>DISEÑADAS PARA NO QUEDARSE QUIETAS.</h2>
+
+        <p>
+          NOMAD Motors une ingeniería funcional, líneas limpias y carácter
+          mecánico. Cada modelo nace con un propósito distinto, pero todos
+          comparten la misma idea: convertir el movimiento en identidad.
+        </p>
+
+        <!-- EDITA AQUÍ: datos destacados de la marca -->
+        <dl class="stats">
+          <div>
+            <dt>07</dt>
+            <dd>MODELOS</dd>
+          </div>
+          <div>
+            <dt>03</dt>
+            <dd>FAMILIAS</dd>
+          </div>
+          <div>
+            <dt>01</dt>
+            <dd>FILOSOFÍA</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CONTENIDO MULTIMEDIA
+         Sustituye estas URLs por archivos en assets/img/
+         ===================================================== -->
+    <section class="section media-section" id="media">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Nomad Journal</p>
+          <h2>Historias en <br>Movimiento.</h2>
+        </div>
+
+        <p class="section-copy">
+          Conoce a los nomadas que componen la tribu.
+        </p>
+      </div>
+
+      <div class="media-grid">
+        <article class="media-card media-large reveal">
+          <img
+            src="assets/img/APEX R.jpg"
+            alt="Detalle de motocicleta NOMAD MOTORS"
+            loading="lazy"
+          >
+          <div class="media-label">Design Study / 01</div>
+        </article>
+
+        <article class="media-card reveal">
+          <img
+            src="assets/img/VECTOR800.jpg"
+            alt="Motocicleta deportiva en carretera"
+            loading="lazy"
+          >
+          <div class="media-label">Road Journal / 02</div>
+        </article>
+
+        <article class="media-card media-video reveal">
+          <button
+            class="video-poster"
+            data-video-open
+            aria-label="Reproducir video"
+          >
+            <img
+              src="assets/img/Raven900.png"
+              alt="Motociclista preparándose para conducir"
+              loading="lazy"
+            >
+            <span class="play-button">PLAY</span>
+          </button>
+
+          <div class="media-label">Brand Film / 03</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         NEWSLETTER
+         Actualmente es una demostración sin base de datos.
+         ===================================================== -->
+    <section class="newsletter reveal">
+      <p class="eyebrow">Nomad newsletter</p>
+      <h2>RECIBE LA SIGUIENTE RUTA.</h2>
+
+      <form id="newsletterForm">
+        <label class="sr-only" for="newsletterEmail">
+          Correo electrónico
+        </label>
+
+        <input
+          id="newsletterEmail"
+          type="email"
+          placeholder="TU@CORREO.COM"
+          required
+        >
+
+        <button type="submit">Suscribirme</button>
+      </form>
+
+      <p class="form-message" id="newsletterMessage" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <!-- =====================================================
+       PIE DE PÁGINA
+       EDITA AQUÍ: correo, teléfono y redes
+       ===================================================== -->
+  <footer id="contacto">
+    <div class="footer-brand">NOMAD MOTORS</div>
+
+    <div class="footer-grid">
+      <div>
+        <p class="footer-title">Contacto</p>
+        <a href="mailto:hello@nomadmotors.test">
+          hello@nomadmotors.test
+        </a>
+        <a href="tel:+520000000000">+52 56 6008 1968</a>
+      </div>
+
+      <div>
+        <p class="footer-title">Redes</p>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+      </div>
+
+      <div>
+        <p class="footer-title">Proyecto</p>
+        <p>Portafolio Ramsés Ramírez Mazy.</p>
+        <p>HTML / CSS / JavaScript.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 NOMAD MOTORS</span>
+      <a href="#top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       CARRITO LATERAL
+       Su contenido se genera desde js/app.js
+       ===================================================== -->
+  <aside
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-hidden="true"
+    aria-label="Carrito de compras"
+  >
+    <div class="drawer-header">
+      <div>
+        <p class="eyebrow">NOMAD Garage</p>
+        <h2>CONFIGURACIÓN</h2>
+      </div>
+
+      <button
+        class="icon-button drawer-close"
+        id="closeCart"
+        aria-label="Cerrar carrito"
+      >
+        ✕
+      </button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-empty" id="cartEmpty">
+      <p>Tu garage está vacío.</p>
+      <span>Selecciona uno de nuestros siete modelos.</span>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="cart-total">
+        <span>Total estimado</span>
+        <strong id="cartTotal">$0 MXN</strong>
+      </div>
+
+      <button
+        class="button button-primary checkout-button"
+        id="checkoutButton"
+      >
+        Solicitar configuración
+      </button>
+
+      <small>
+        Demostración de portafolio. No procesa pagos reales.
+      </small>
+    </div>
+  </aside>
+
+  <!-- Oscurece el sitio cuando el carrito está abierto -->
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <!-- =====================================================
+       MODAL DE VISTA RÁPIDA
+       JavaScript coloca aquí la información del modelo.
+       ===================================================== -->
+  <dialog class="quick-view" id="quickView">
+    <button
+      class="modal-close"
+      id="closeQuickView"
+      aria-label="Cerrar vista rápida"
+    >
+      ✕
+    </button>
+
+    <div class="quick-view-layout">
+      <div class="quick-view-image">
+        <img id="quickViewImage" src="" alt="">
+      </div>
+
+      <div class="quick-view-content">
+        <p class="eyebrow" id="quickViewCategory"></p>
+        <h2 id="quickViewName"></h2>
+        <p class="quick-view-price" id="quickViewPrice"></p>
+        <p id="quickViewDescription"></p>
+
+        <div class="spec-grid" id="quickViewSpecs"></div>
+
+        <button
+          class="button button-primary"
+          id="quickViewAdd"
+        >
+          Agregar al garage
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal para el video promocional -->
+  <dialog class="video-modal" id="videoModal">
+    <button
+      class="modal-close"
+      id="closeVideo"
+      aria-label="Cerrar video"
+    >
+      ✕
+    </button>
+
+    <div class="video-frame">
+      <iframe
+        id="videoFrame"
+        src=""
+        title="Video promocional"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </dialog>
+
+  <!-- Mensajes breves de confirmación -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- IMPORTANTE: data.js debe cargarse antes de app.js -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
