@@ -1,16 +1,4 @@
-/* =========================================================
-   NOMAD MOTORS — HOJA DE ESTILOS PRINCIPAL
 
-   GUÍA RÁPIDA:
-   1. Cambia la paleta en :root.
-   2. Busca "EDITA AQUÍ" para ajustes frecuentes.
-   3. Los diseños móviles están al final del archivo.
-   ========================================================= */
-
-/* =========================================================
-   PALETA Y VARIABLES GLOBALES
-   EDITA AQUÍ: colores principales del sitio
-   ========================================================= */
 :root {
   --red: #b82025;
   --red-dark: #7f1418;
